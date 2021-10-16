@@ -114,6 +114,22 @@ nav .location {
   border: 1px solid rgb(0, 0, 0, 0.2);
 }
 
+nav .search button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: #eb5757;
+  background: #000;
+  color: #fff;
+  padding: 13px;
+  width: 127px;
+  border-radius: 16px;
+}
+
+nav .search img {
+  padding-right: 10px;
+}
+
 .location small {
   font-weight: bold;
 }
@@ -125,6 +141,7 @@ nav .location {
 .guest label {
   font-size: 13px;
   font-weight: bold;
+  display: block;
 }
 
 .guest input {
@@ -139,6 +156,24 @@ nav .location {
   background: rgba(40, 40, 40, 0.5);
   top: 0;
   left: 0;
+}
+
+@media (max-width: 630px) {
+  nav .location,
+  nav .search,
+  nav .guest {
+    margin: 5px 0;
+  }
+
+  nav .filter {
+    box-shadow: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .search {
+    padding-left: 0px;
+  }
 }
 
 /* stay component styles */

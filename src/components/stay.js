@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import data from "../stays.json"
-import rate from "../svg/star.svg"
+import rate from "../svg/rate.svg"
 
 const Stay = () => {
 

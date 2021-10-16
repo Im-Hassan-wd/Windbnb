@@ -29,7 +29,12 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                            <label htmlFor="">GUESTS</label>
                            <input type="text" placeholder="Add guests"/>
                         </div>
-                        <div className="search"><img src={search} alt=""/></div>
+                        <div className="search">
+                            <button>
+                                <img src={search} alt=""/>
+                                search
+                            </button>
+                        </div>
                     </div>
                 </nav>
             </div> : null
