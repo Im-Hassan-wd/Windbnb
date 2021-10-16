@@ -91,10 +91,12 @@ nav {
   width: 100%;
   z-index: 10;
   background: #fff;
+  padding-bottom: 35px;
 }
 
 nav .filter {
   margin-top: 40px;
+  margin-bottom: 40px;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   align-items: center;
   border-radius: 16px;
@@ -105,7 +107,7 @@ nav .filter {
 nav .location,
 nav .search,
 nav .guest {
-  padding: 2px 15px;
+  padding: 0px 15px;
   width: 250px;
   border-radius: 10px;
 }
@@ -128,6 +130,30 @@ nav .search button {
 nav .search img {
   padding-right: 10px;
   filter: invert(1);
+}
+
+nav .location-tab,
+nav .guest-tab {
+  width: 78%;
+  margin: 10px auto;
+}
+
+nav .location-tab p {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+nav .guest-tab h4 {
+  font-size: 14px;
+  color: #333333;
+}
+
+nav .guest-tab p {
+}
+
+nav .location-tab img {
+  padding-right: 10px;
 }
 
 .location small {

@@ -5,7 +5,7 @@ import Home from './components/home';
 
 const App = () => {
 
-  const [showing, isShowing] = useState('');
+  const [showing, isShowing] = useState('active');
 
   const handleClickAgain = () => {
     isShowing('');

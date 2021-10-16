@@ -1,7 +1,21 @@
+import { useState } from "react";
 import air from '../img/logo.png';
 import search from '../svg/search.svg';
+import Location from "./location"
 
 const Header = ({showing, handleClick, handleClickAgain}) => {
+
+    const [location, isLocation] = useState("active");
+    const [guest, isGuest] = useState("");
+
+    const handleClickLocation = () => {
+        isLocation("active");
+        isGuest("");
+    }
+    const handleClickGuest = () => {
+        isGuest("active");
+        isLocation("");
+    }
 
     return (
         <>
@@ -21,11 +35,11 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                 <div className="overlay" onClick={handleClickAgain}></div>
                 <nav>
                     <div className="filter">
-                        <div className="location">
+                        <div className="location" onClick={handleClickLocation}>
                             <small>Loaction</small>
                             <p>Helsinki, Finland</p>
                         </div>
-                        <div className="guest">
+                        <div className="guest" onClick={handleClickGuest}>
                            <label htmlFor="">GUESTS</label>
                            <input type="text" placeholder="Add guests"/>
                         </div>
@@ -36,6 +50,14 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                             </button>
                         </div>
                     </div>
+                    { location === "active" ? <div className="location-tab">
+                        <Location name="Helsinki, Finland" />
+                        <Location name="Oulu, Finland" />
+                        <Location name="Vaasa, Finland" />
+                        <Location name="Turku, Finland" />
+                    </div> : null}
+                    { guest === "active" ? <div className="guest-tab">
+                    </div> : null}
                 </nav>
             </div> : null
             }
