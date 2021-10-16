@@ -119,7 +119,6 @@ nav .search button {
   align-items: center;
   border: none;
   background: #eb5757;
-  background: #000;
   color: #fff;
   padding: 13px;
   width: 127px;
@@ -128,6 +127,7 @@ nav .search button {
 
 nav .search img {
   padding-right: 10px;
+  filter: invert(1);
 }
 
 .location small {

@@ -1,5 +1,5 @@
 import air from '../img/logo.png';
-import search from '../img/search.svg';
+import search from '../svg/search.svg';
 
 const Header = ({showing, handleClick, handleClickAgain}) => {
 
