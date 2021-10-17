@@ -60,7 +60,8 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                         <Location name="Turku, Finland" />
                     </div> : null}
                     { guest === "active" ? <div className="guest-tab">
-                        <Guest />
+                        <Guest age="Age 13 or above" stage="Adults" />
+                        <Guest age="Age 2 - 12" stage="Children" />
                     </div> : null}
                 </nav>
             </div> : null
