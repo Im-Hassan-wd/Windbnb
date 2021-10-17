@@ -125,6 +125,7 @@ nav .search button {
   padding: 13px;
   width: 127px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 nav .search img {
@@ -144,16 +145,6 @@ nav .location-tab p {
   align-items: center;
 }
 
-nav .guest-tab h4 {
-  font-size: 14px;
-  color: #333333;
-}
-
-nav .guest-tab p {
-  font-size: 14px;
-  color: #828282;
-}
-
 nav .location-tab img {
   padding-right: 10px;
 }
@@ -166,15 +157,18 @@ nav .location-tab img {
   font-size: 14px;
 }
 
-.guest label {
+.guest label,
+.location label {
   font-size: 13px;
   font-weight: bold;
   display: block;
 }
 
-.guest input {
+.guest input,
+.location input {
   border: none;
   outline: none;
+  width: 220px;
 }
 
 .overlay {
@@ -267,7 +261,6 @@ p.host {
 }
 
 .rate {
-  /* width: 14px; */
   padding-right: 10px;
 }
 
@@ -281,4 +274,34 @@ p.host {
   .stay {
     grid-template-columns: 1fr;
   }
+}
+
+/* guest component */
+
+.guest-tab h4 {
+  font-size: 14px;
+  color: #333333;
+  padding: 5px 0;
+}
+
+.guest-tab p {
+  font-size: 14px;
+  color: #828282;
+  padding: 5px 0;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+}
+
+.number button {
+  border: none;
+  outline-color: #bdbdbd;
+  background: none;
+  cursor: pointer;
+}
+
+.number p {
+  padding: 10px;
 }

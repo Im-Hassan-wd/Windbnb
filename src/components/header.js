@@ -37,12 +37,14 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                 <nav>
                     <div className="filter">
                         <div className="location" onClick={handleClickLocation}>
-                            <small>Loaction</small>
-                            <p>Helsinki, Finland</p>
+                            {/* <small>Loaction</small>
+                            <p>Helsinki, Finland</p> */}
+                            <label htmlFor="location">LOCATION</label>
+                           <input name="location" type="text" placeholder="Helsinki, Finland"/>
                         </div>
                         <div className="guest" onClick={handleClickGuest}>
-                           <label htmlFor="">GUESTS</label>
-                           <input type="text" placeholder="Add guests"/>
+                           <label htmlFor="guest">GUESTS</label>
+                           <input name="guest" type="text" placeholder="Add guests"/>
                         </div>
                         <div className="search">
                             <button>
