@@ -1,6 +1,7 @@
 import { useState } from "react";
 import air from '../img/logo.png';
 import search from '../svg/search.svg';
+import Guest from "./guest";
 import Location from "./location"
 
 const Header = ({showing, handleClick, handleClickAgain}) => {
@@ -57,6 +58,7 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                         <Location name="Turku, Finland" />
                     </div> : null}
                     { guest === "active" ? <div className="guest-tab">
+                        <Guest />
                     </div> : null}
                 </nav>
             </div> : null

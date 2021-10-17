@@ -2,7 +2,7 @@ const Guest = () => {
     return (
         <>
         <h4>Adults</h4>
-        <p></p>
+        <p>Age 13 or above</p>
         <div className="number">
             0
         </div>

@@ -150,6 +150,8 @@ nav .guest-tab h4 {
 }
 
 nav .guest-tab p {
+  font-size: 14px;
+  color: #828282;
 }
 
 nav .location-tab img {
