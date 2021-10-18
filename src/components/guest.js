@@ -8,8 +8,7 @@ const Guest = ({age, stage}) => {
     const [increasing, setIncreasing] = useState(0);
 
     const handleIncrease = () => {
-        setIncreasing(increasing +1)
-        // setIncreasing(increase);
+        setIncreasing(increasing +1);
     }
 
     const handleDecrease = () => {

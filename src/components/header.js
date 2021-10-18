@@ -4,7 +4,7 @@ import search from '../svg/search.svg';
 import Guest from "./guest";
 import Location from "./location"
 
-const Header = ({showing, handleClick, handleClickAgain}) => {
+const Header = ({showing, handleClick, handleClickAgain, handleSearch}) => {
 
     const [location, setLocation] = useState("active");
     const [guest, setGuest] = useState("");
@@ -16,14 +16,6 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
     const handleClickGuest = () => {
         setGuest("active");
         setLocation("");
-    }
-
-    const handleSearch = (e) => {
-        e.preventDefault();
-        const filterRoom = e.target.value;
-        console.log(filterRoom);
-        filterRoom.trim();
-
     }
 
     return (
@@ -49,7 +41,7 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                             <p>Helsinki, Finland</p> */}
                             <form>
                                 <label htmlFor="location">LOCATION</label>
-                                <input onSubmit={(e)=>handleSearch()} name="location" type="text" placeholder="Helsinki, Finland"/>
+                                <input onChange={handleSearch} name="location" type="text" placeholder="Helsinki, Finland"/>
                             </form>
                         </div>
                         <div className="guest" onClick={handleClickGuest}>

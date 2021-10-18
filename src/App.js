@@ -2,23 +2,31 @@ import React, {useState} from 'react';
 import './App.css';
 import Header from './components/header';
 import Home from './components/home';
+import rooms from "./stays.json"
 
 const App = () => {
 
-  const [showing, isShowing] = useState('active');
+  const [showing, setShowing] = useState('active');
 
   const handleClickAgain = () => {
-    isShowing('');
+    setShowing('');
   }
 
   const handleClick = () => {
-    isShowing("active");
+    setShowing("active");
+  }
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const filterRoom = e.target.value;
+    
+    rooms.filter(room => room.city === e.target);
   }
 
   return (
     <div className="page">
-      <Header showing={showing} handleClick={handleClick} handleClickAgain={handleClickAgain}/>
-      <Home/>
+      <Header handleSearch={handleSearch} showing={showing} handleClick={handleClick} handleClickAgain={handleClickAgain}/>
+      <Home rooms={rooms} />
     </div>
   );
 }

@@ -1,8 +1,7 @@
 import Stay from "./stay";
-import {useState} from 'react';
+// import data from "../stays.json";
 
-
-const Home = () => {
+const Home = ({rooms}) => {
 
     return (
         <>
@@ -13,7 +12,7 @@ const Home = () => {
                 </div>
             </div>
             
-            <Stay/>
+            <Stay rooms={rooms}/>
         </>
     );
 }

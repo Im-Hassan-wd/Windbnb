@@ -1,18 +1,12 @@
-import { useEffect } from "react";
-import data from "../stays.json"
 import rate from "../svg/rate.svg"
 
-const Stay = () => {
-
-    useEffect(() => {
-    }, []);
-
+const Stay = ({rooms}) => {
 
     return (
        <div className="stay">
-           {data.map(room => (
+           {rooms && rooms.map(room => (
                <div className="room-preview" key={room.id}>
-                   {/* <img className="room-preview-img" src={} alt={room.title} /> */}
+                   {/* <img className="room-preview-img" src={room.photo} alt={room.title} /> */}
                    <div className="description">
                        <div className="special">
                             {room.superHost && <p className="host">SUPER HOST</p>}
