@@ -5,19 +5,18 @@ import plus from "../svg/plus.svg"
 
 const Guest = ({age, stage}) => {
 
-    const [increasing, setIncreasing] = useState(0)
-    const [decreasing, setDecreasing] = useState(0)
+    const [increasing, setIncreasing] = useState(0);
 
     const handleIncrease = () => {
-        let increase = 0;
-        increase ++;
-        console.log(increase)
+        setIncreasing(increasing +1)
         // setIncreasing(increase);
     }
 
     const handleDecrease = () => {
-        let increase = 0;
-        increase --;
+        setIncreasing(increasing -1);
+        if(increasing === 0) {
+          setIncreasing(0)  
+        }
     }
 
     return (
@@ -27,7 +26,7 @@ const Guest = ({age, stage}) => {
         <div className="number">
             <button onClick={handleIncrease}><img src={plus} alt="" /></button>
             <p>{increasing}</p>
-            <button><img src={minus} alt="" /></button>   
+            <button onClick={handleDecrease}><img src={minus} alt="" /></button>   
         </div>
         </>
     );

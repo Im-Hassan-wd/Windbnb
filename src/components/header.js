@@ -6,20 +6,24 @@ import Location from "./location"
 
 const Header = ({showing, handleClick, handleClickAgain}) => {
 
-    const [location, isLocation] = useState("active");
-    const [guest, isGuest] = useState("");
+    const [location, setLocation] = useState("active");
+    const [guest, setGuest] = useState("");
 
     const handleClickLocation = () => {
-        isLocation("active");
-        isGuest("");
+        setLocation("active");
+        setGuest("");
     }
     const handleClickGuest = () => {
-        isGuest("active");
-        isLocation("");
+        setGuest("active");
+        setLocation("");
     }
 
-    const handleSearch = () => {
-        console.log("handle my serach")
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const filterRoom = e.target.value;
+        console.log(filterRoom);
+        filterRoom.trim();
+
     }
 
     return (
@@ -43,8 +47,10 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                         <div className="location" onClick={handleClickLocation}>
                             {/* <small>Loaction</small>
                             <p>Helsinki, Finland</p> */}
-                            <label htmlFor="location">LOCATION</label>
-                           <input onKeyUp={handleSearch} name="location" type="text" placeholder="Helsinki, Finland"/>
+                            <form>
+                                <label htmlFor="location">LOCATION</label>
+                                <input onSubmit={(e)=>handleSearch()} name="location" type="text" placeholder="Helsinki, Finland"/>
+                            </form>
                         </div>
                         <div className="guest" onClick={handleClickGuest}>
                            <label htmlFor="guest">GUESTS</label>
