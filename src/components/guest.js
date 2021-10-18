@@ -5,13 +5,14 @@ import plus from "../svg/plus.svg"
 
 const Guest = ({age, stage}) => {
 
-    const [increasing, isIncreasing] = useState(0)
-    const [decreasing, isDecreasing] = useState(0)
+    const [increasing, setIncreasing] = useState(0)
+    const [decreasing, setDecreasing] = useState(0)
 
     const handleIncrease = () => {
         let increase = 0;
         increase ++;
-        isIncreasing(increase);
+        console.log(increase)
+        // setIncreasing(increase);
     }
 
     const handleDecrease = () => {

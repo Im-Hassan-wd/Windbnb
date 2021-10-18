@@ -18,6 +18,10 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
         isLocation("");
     }
 
+    const handleSearch = () => {
+        console.log("handle my serach")
+    }
+
     return (
         <>
             <header className="header">
@@ -40,7 +44,7 @@ const Header = ({showing, handleClick, handleClickAgain}) => {
                             {/* <small>Loaction</small>
                             <p>Helsinki, Finland</p> */}
                             <label htmlFor="location">LOCATION</label>
-                           <input name="location" type="text" placeholder="Helsinki, Finland"/>
+                           <input onKeyUp={handleSearch} name="location" type="text" placeholder="Helsinki, Finland"/>
                         </div>
                         <div className="guest" onClick={handleClickGuest}>
                            <label htmlFor="guest">GUESTS</label>

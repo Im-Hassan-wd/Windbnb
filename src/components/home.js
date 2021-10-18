@@ -1,4 +1,6 @@
 import Stay from "./stay";
+import {useState} from 'react';
+
 
 const Home = () => {
 
