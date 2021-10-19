@@ -8,7 +8,7 @@ const Home = () => {
 
     const [room, setRoom] = useState(rooms);
 
-    const [showing, setShowing] = useState('active');
+    const [showing, setShowing] = useState('');
 
     const handleClickAgain = () => {
         setShowing('');
@@ -21,13 +21,9 @@ const Home = () => {
     const handleSearch = (e, city) => {
         e.preventDefault();
         
-        const newRoom = rooms.filter(room => room.city !== e.target.children[1].value);
+        const newRoom = rooms.filter(room => room.city === e.target.children[1].value);
         setRoom(newRoom);
         setShowing('');
-
-                
-
-
     }
 
     return (

@@ -6,7 +6,7 @@ const Stay = ({rooms}) => {
        <div className="stay">
            {rooms && rooms.map(room => (
                <div className="room-preview" key={room.id}>
-                   <img className="room-preview-img" src={room.photo} alt={room.title} />
+                   {/* <img className="room-preview-img" src={room.photo} alt={room.title} /> */}
                    <div className="description">
                        <div className="special">
                             {room.superHost && <p className="host">SUPER HOST</p>}
@@ -20,6 +20,7 @@ const Stay = ({rooms}) => {
                    <h3 className="name">{room.title}</h3>
                </div>
            ))}
+           {rooms.length === 0 && <h1>City is not available</h1>}
        </div>
     );
 }
