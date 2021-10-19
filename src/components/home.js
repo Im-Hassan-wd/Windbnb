@@ -21,8 +21,9 @@ const Home = () => {
     const handleSearch = (e, city) => {
         e.preventDefault();
         
-        const newRoom = rooms.filter(room => room.city === e.target.children[1].value);
+        const newRoom = rooms.filter(room => room.city.toLowerCase() === e.target.children[1].value.toLowerCase());
         setRoom(newRoom);
+        console.log(newRoom)
         setShowing('');
     }
 
