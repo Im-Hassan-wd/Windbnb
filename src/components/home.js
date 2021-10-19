@@ -23,7 +23,6 @@ const Home = () => {
         
         const newRoom = rooms.filter(room => room.city.toLowerCase() === e.target.children[1].value.toLowerCase());
         setRoom(newRoom);
-        console.log(newRoom)
         setShowing('');
     }
 
