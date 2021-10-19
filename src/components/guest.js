@@ -3,20 +3,8 @@ import {useState} from 'react';
 import minus from "../svg/minus.svg"
 import plus from "../svg/plus.svg"
 
-const Guest = ({age, stage}) => {
+const Guest = ({age, stage, handleDecrease, handleIncrease, increasing}) => {
 
-    const [increasing, setIncreasing] = useState(0);
-
-    const handleIncrease = () => {
-        setIncreasing(increasing +1);
-    }
-
-    const handleDecrease = () => {
-        setIncreasing(increasing -1);
-        if(increasing === 0) {
-          setIncreasing(0)  
-        }
-    }
 
     return (
         <>

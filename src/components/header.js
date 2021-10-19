@@ -18,6 +18,19 @@ const Header = ({showing, handleClick, handleClickAgain, handleSearch, rooms}) =
         setLocation("");
     }
 
+    const [increasing, setIncreasing] = useState(0);
+
+    const handleIncrease = () => {
+        setIncreasing(increasing +1);
+    }
+
+    const handleDecrease = () => {
+        setIncreasing(increasing -1);
+        if(increasing === 0) {
+          setIncreasing(0)  
+        }
+    }
+
     return (
         <>
             <header className="header">
@@ -46,7 +59,7 @@ const Header = ({showing, handleClick, handleClickAgain, handleSearch, rooms}) =
                         </div>
                         <div className="guest" onClick={handleClickGuest}>
                            <label htmlFor="guest">GUESTS</label>
-                           <input name="guest" type="text" placeholder="Add guests"/>
+                           {/* <input value={increasing} name="guest" type="text" placeholder="Add guests"/> */}
                         </div>
                         <div className="search">
                             <button>
@@ -62,7 +75,7 @@ const Header = ({showing, handleClick, handleClickAgain, handleSearch, rooms}) =
                         <Location name="Turku, Finland" />
                     </div> : null}
                     { guest === "active" ? <div className="guest-tab">
-                        <Guest age="Age 13 or above" stage="Adults" />
+                        <Guest age="Age 13 or above" stage="Adults" increasing={increasing} handleIncrease={handleIncrease} handleDecrease={handleDecrease}/>
                         <Guest age="Age 2 - 12" stage="Children" />
                     </div> : null}
                 </nav>

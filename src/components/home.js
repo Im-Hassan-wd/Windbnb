@@ -26,6 +26,10 @@ const Home = () => {
         setShowing('');
     }
 
+    const handleSearchAgain = () => {
+        
+    }
+
     return (
         <>
             <Header rooms={room} showing={showing} handleClick={handleClick} handleClickAgain={handleClickAgain} handleSearch={handleSearch}/>
