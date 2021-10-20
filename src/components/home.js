@@ -24,8 +24,9 @@ const Home = () => {
         
         const newRoom = rooms.filter(room => room.city.toLowerCase() === e.target.children[0].children[1].value.toLowerCase());
         const guest = rooms.filter(room => room.maxGuests === parseInt(e.target.children[1].children[1].value));
-        // setRoom(newRoom);
+        setRoom(newRoom);
         console.log(guest);
+        console.log(newRoom);
         // setRoom(guest);
         setShowing('');
     }

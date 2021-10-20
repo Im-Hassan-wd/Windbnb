@@ -48,7 +48,7 @@ const Header = ({showing, handleClick, handleClickAgain, handleSearch, rooms}) =
             <div>
                 <div className="overlay" onClick={handleClickAgain}></div>
                 <nav>
-                    <form onSubmit={(e) => handleSearch(e, rooms.map(room => room.maxGuests))} className="filter">
+                    <form onSubmit={(e) => handleSearch(e, rooms.map(room => room.city || room.maxGuests))} className="filter">
                         <div className="location" onClick={handleClickLocation}>
                             <label htmlFor="location">LOCATION</label>
                             <input name="location" type="text" placeholder="Helsinki, Finland"/>
