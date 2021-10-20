@@ -20,15 +20,20 @@ const Home = () => {
 
     const handleSearch = (e, city) => {
         e.preventDefault();
+        console.log(e.target.children[1].children[1].value)
         
-        const newRoom = rooms.filter(room => room.city.toLowerCase() === e.target.children[1].value.toLowerCase());
-        setRoom(newRoom);
+        const newRoom = rooms.filter(room => room.city.toLowerCase() === e.target.children[0].children[1].value.toLowerCase());
+        const guest = rooms.filter(room => room.maxGuests === parseInt(e.target.children[1].children[1].value));
+        // setRoom(newRoom);
+        console.log(guest);
+        // setRoom(guest);
         setShowing('');
     }
 
-    const handleSearchAgain = () => {
-        
-    }
+    // const handleSearchAgain = (e) => {
+    //     const guest = rooms.filter(room => room.maxGuests === e.target.children[1].children[1].value);
+    //     setRoom(guest);
+    // }
 
     return (
         <>

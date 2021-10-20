@@ -20,7 +20,7 @@ const Stay = ({rooms}) => {
                    <h3 className="name">{room.title}</h3>
                </div>
            ))}
-           {rooms.length === 0 && <h1>Room not found: City is unavailable</h1>}
+           {/* {rooms.length === 0 && <h1>Room not found: City is unavailable</h1>} */}
        </div>
     );
 }

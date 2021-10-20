@@ -48,18 +48,14 @@ const Header = ({showing, handleClick, handleClickAgain, handleSearch, rooms}) =
             <div>
                 <div className="overlay" onClick={handleClickAgain}></div>
                 <nav>
-                    <div className="filter">
+                    <form onSubmit={(e) => handleSearch(e, rooms.map(room => room.maxGuests))} className="filter">
                         <div className="location" onClick={handleClickLocation}>
-                            {/* <small>Loaction</small>
-                            <p>Helsinki, Finland</p> */}
-                            <form onSubmit={(e) => handleSearch(e, rooms.map(room => room.city))}>
-                                <label htmlFor="location">LOCATION</label>
-                                <input name="location" type="text" placeholder="Helsinki, Finland"/>
-                            </form>
+                            <label htmlFor="location">LOCATION</label>
+                            <input name="location" type="text" placeholder="Helsinki, Finland"/>
                         </div>
                         <div className="guest" onClick={handleClickGuest}>
                            <label htmlFor="guest">GUESTS</label>
-                           {/* <input value={increasing} name="guest" type="text" placeholder="Add guests"/> */}
+                           <input name="guest" type="text" placeholder="Add guests"/>
                         </div>
                         <div className="search">
                             <button>
@@ -67,7 +63,7 @@ const Header = ({showing, handleClick, handleClickAgain, handleSearch, rooms}) =
                                 search
                             </button>
                         </div>
-                    </div>
+                    </form>
                     { location === "active" ? <div className="location-tab">
                         <Location name="Helsinki, Finland" />
                         <Location name="Oulu, Finland" />
