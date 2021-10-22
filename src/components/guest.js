@@ -1,5 +1,3 @@
-import {useState} from 'react';
-
 import minus from "../svg/minus.svg"
 import plus from "../svg/plus.svg"
 
