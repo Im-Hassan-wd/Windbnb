@@ -23,14 +23,10 @@ const Home = () => {
         
         const newRoom = rooms.filter(room => room.city.toLowerCase() === e.target.children[0].children[1].value.toLowerCase());
         const guest = rooms.filter(room => room.maxGuests === parseInt(e.target.children[1].children[1].value));
-        setRoom(newRoom);
+        {newRoom.length && setRoom(newRoom)}
+        {guest.length && setRoom(guest)}
         setShowing('');
     }
-
-    // const handleSearchAgain = (e) => {
-    //     const guest = rooms.filter(room => room.maxGuests === e.target.children[1].children[1].value);
-    //     setRoom(guest);
-    // }
 
     return (
         <>
@@ -38,7 +34,7 @@ const Home = () => {
             <div className="home">
                 <div className="home-title">
                     <h1>Stays in Finland</h1>
-                    <p>12+ stays</p>
+                    <p>{room.length} stays</p>
                 </div>
             </div>
 
